@@ -6,26 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hbinfree.github.io">
-  <title>matlab决策树 | HBin</title>
+  <title>matlab主成分分析 | HBin</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;决策树算法的matlab实现">
+  <meta name="description" content="&amp;emsp;&amp;emsp;将变量进行先行组合，淘汰方差比较少的组合变量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="matlab决策树">
-<meta property="og:url" content="https://hbinfree.github.io/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/index.html">
+<meta property="og:title" content="matlab主成分分析">
+<meta property="og:url" content="https://hbinfree.github.io/2020/04/21/matlab%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="HBin">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;决策树算法的matlab实现">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/3.png">
-<meta property="article:published_time" content="2020-04-20T06:46:03.543Z">
-<meta property="article:modified_time" content="2020-04-20T07:07:24.046Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;将变量进行先行组合，淘汰方差比较少的组合变量">
+<meta property="article:published_time" content="2020-04-21T07:29:29.418Z">
+<meta property="article:modified_time" content="2020-04-21T07:55:24.447Z">
 <meta property="article:author" content="Hbin">
 <meta property="article:tag" content="HBin">
 <meta property="article:tag" content="HBin_技术博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HBin" type="application/atom+xml">
   
@@ -186,22 +182,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-matlab决策树" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-matlab主成分分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      matlab决策树
+      matlab主成分分析
     </h1>
   
 
 
   
   
-<a href="/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-        <time datetime="2020-04-20T06:46:03.543Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+<a href="/2020/04/21/matlab%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" class="archive-article-date">
+        <time datetime="2020-04-21T07:29:29.418Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
 </a>
 
   
@@ -214,7 +210,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">377字</span>
+      <span class="post-count">754字</span>
     </span>
   </span>
 
@@ -223,7 +219,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -234,36 +230,25 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>&emsp;&emsp;决策树算法的matlab实现</p>
+    <p>&emsp;&emsp;将变量进行先行组合，淘汰方差比较少的组合变量</p>
 <a id="more"></a>
 
-<h2 id="一、fitctree-函数"><a href="#一、fitctree-函数" class="headerlink" title="一、fitctree()函数"></a>一、fitctree()函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tree &#x3D; fitctree(X,Y) %X是分类数据的属性，Y是分类数据的分类值</span><br><span class="line">tree &#x3D; fitctree(X,Y,’CrossVal’,’on’) %用十折交叉验证</span><br><span class="line">tree &#x3D; fitctree(X,Y,&#39;MaxNumSplits&#39;,7,&#39;CrossVal&#39;,&#39;on&#39;); %最大分叉数为7</span><br><span class="line">view(tree,&#39;Mode&#39;,&#39;graph&#39;) %画出决策树</span><br></pre></td></tr></table></figure>
+<h2 id="一、corrcoef-函数求相关系数矩阵"><a href="#一、corrcoef-函数求相关系数矩阵" class="headerlink" title="一、corrcoef()函数求相关系数矩阵"></a>一、corrcoef()函数求相关系数矩阵</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r &#x3D; corrcoef(data) %r即是data的相关系数矩阵</span><br></pre></td></tr></table></figure>
 
-<h2 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h2><p>X是训练数据，Y是测试数据，行对应每一个样本，列对应变量，IDX的每一行对应着在X中距离Y最近的样本的索引值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">load ionosphere  %读取ionosphere数据集</span><br><span class="line">rng(1);    % For reproducibility （选取生成随机数的种子？）</span><br><span class="line">MdlDefault &#x3D; fitctree(X,Y,&#39;CrossVal&#39;,&#39;on&#39;);  %生成决策树</span><br><span class="line">% Draw a histogram of the number of imposed splits on the trees. Also, view one of the trees.</span><br><span class="line">numBranches &#x3D; @(x)sum(x.IsBranch);</span><br><span class="line">mdlDefaultNumSplits &#x3D; cellfun(numBranches, MdlDefault.Trained);</span><br><span class="line">figure;</span><br><span class="line">histogram(mdlDefaultNumSplits)</span><br></pre></td></tr></table></figure>
-
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
-</div>
-
-<p>画出决策树</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">view(MdlDefault.Trained&#123;1&#125;,&#39;Mode&#39;,&#39;graph&#39;)    %画出决策树</span><br></pre></td></tr></table></figure>
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/2.png">
-</div>
-
-<p>平均分叉数是15</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%现在规定最大分叉树是7</span><br><span class="line">Mdl7 &#x3D; fitctree(X,Y,&#39;MaxNumSplits&#39;,7,&#39;CrossVal&#39;,&#39;on&#39;);</span><br><span class="line">view(Mdl7.Trained&#123;1&#125;,&#39;Mode&#39;,&#39;graph&#39;)</span><br></pre></td></tr></table></figure>
-
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/3.png">
-</div>
-
-<p>然后比较模型的交叉验证分类错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">classErrorDefault &#x3D; kfoldLoss(MdlDefault)</span><br><span class="line">classError7 &#x3D; kfoldLoss(Mdl7)</span><br></pre></td></tr></table></figure>
-
-<p>结果：classErrorDefault = 0.1140 , classError7 = 0.1254<br>Mdl7的复杂性要小得多，并且只比MdlDefault稍微糟糕一点。</p>
-<p>参考:<br><a href="https://blog.csdn.net/mingtian715/article/details/53607060" target="_blank" rel="noopener">https://blog.csdn.net/mingtian715/article/details/53607060</a><br><a href="https://cn.mathworks.com/help/stats/fitctree.html?searchHighlight=fitctree&amp;s_tid=doc_srchtitle" target="_blank" rel="noopener">https://cn.mathworks.com/help/stats/fitctree.html?searchHighlight=fitctree&amp;s_tid=doc_srchtitle</a><br><a href="https://cn.mathworks.com/help/stats/compactclassificationtree.view.html" target="_blank" rel="noopener">https://cn.mathworks.com/help/stats/compactclassificationtree.view.html</a><br><a href="https://zhidao.baidu.com/question/274991642.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/274991642.html</a><br><a href="https://blog.csdn.net/huanleu/article/details/38439345" target="_blank" rel="noopener">https://blog.csdn.net/huanleu/article/details/38439345</a><br><a href="https://blog.csdn.net/j1097376869/article/details/72638737?locationNum=7&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/j1097376869/article/details/72638737?locationNum=7&amp;fps=1</a></p>
+<h2 id="二、Matlab里面的相关函数"><a href="#二、Matlab里面的相关函数" class="headerlink" title="二、Matlab里面的相关函数"></a>二、Matlab里面的相关函数</h2><p>与主成分分析相关的MATLAB函数有pcacov、princomp函数</p>
+<h3 id="1-pcacov函数"><a href="#1-pcacov函数" class="headerlink" title="(1)pcacov函数"></a>(1)pcacov函数</h3><p>pcacov函数用来根据协方差矩阵或相关系数矩阵进行主成分分析，调用格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COEFF&#x3D;pcacov（V）</span><br><span class="line">[COEFF,latent]&#x3D;pcacov（V）</span><br><span class="line">[COEFF,latent,explained]&#x3D;pcacov（V）</span><br></pre></td></tr></table></figure>
+<p>以上调用的输入参数V是总体或样本的协方差矩阵或相关系数矩阵，对于p维总体，V是pxp的矩阵。输出参数COEFF是p个主成分的系数矩阵，它是pxp的矩阵，它的第i列是第i个主成分的系数向量。输出参数latent是p个主成分的方差构成的向量，即V的p个特征值的大小(从大到小)构成的向量。输出参数explained是p个主成分的贡献率向量，已经转化为百分比。</p>
+<h3 id="2-princomp函数"><a href="#2-princomp函数" class="headerlink" title="(2)princomp函数"></a>(2)princomp函数</h3><p>princomp函数用来根据样本观测值矩阵进行主成分分析，其调用格式如下：</p>
+<h4 id="lt-1-gt"><a href="#lt-1-gt" class="headerlink" title="&lt;1&gt;"></a>&lt;1&gt;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[COEFF，SCORE]&#x3D;princomp（X）</span><br></pre></td></tr></table></figure>
+<p>根据样本观测值矩阵X进行主成分分析。输入参数X是n行p列的矩阵，每一行对应一个观测(样品)，每一列对应一个变量。输出参数COEFF是p个主成分析的系数矩阵，他是pxp的矩阵，它的第i列对应第i个主成分的系数向量。输出参数SCORE是n个样品的p个主成分得分矩阵，它是n行p列的矩阵，每一行对应一个观测，每一列对应一个主成分，第i行第j列元素表示第i个样品的第j个主成分得分，SCORE与X是一 一对应的关系，是X在新坐标系中的数据，可以通过X*系数矩阵得到。</p>
+<h4 id="lt-2-gt"><a href="#lt-2-gt" class="headerlink" title="&lt;2&gt;"></a>&lt;2&gt;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[COEFF,SCORE,latent]&#x3D;princomp（X）</span><br></pre></td></tr></table></figure>
+<p>返回样本协方差矩阵的特征值向量latent，它是由p个特征值构成的列向量，其中特征值按降序排列。</p>
+<h4 id="lt-3-gt"><a href="#lt-3-gt" class="headerlink" title="&lt;3&gt;"></a>&lt;3&gt;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[COEFF,SCORE,latent,tsquare]&#x3D;princomp（X）</span><br></pre></td></tr></table></figure>
+<p>返回一个包含n个元素的列向量tsquare，它的第i个元素的第i个观测对应的霍特林T^2统计量，表述了第i个观测与数据集(样本观测矩阵)的中心之间的距离，可用来寻找远离中心的极端数据。</p>
+<h4 id="lt-4-gt"><a href="#lt-4-gt" class="headerlink" title="&lt;4&gt;"></a>&lt;4&gt;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[......]&#x3D;princomp（X,‘econ’）</span><br></pre></td></tr></table></figure>
+<p>通过设置参数‘econ’参数，使得当n&lt;=p时，只返回latent中的前n-1个元素(去掉不必要的0元素)及COEFF和SCORE矩阵中相应的列。</p>
+<p><font color="red">注：<br>SCORE即是原数据新的坐标系下的数据形式<br>额外获得：<br>cumsum函数：<br>B = cumsum(A,dim)，或B = cumsum(A)<br>dim = 1按行累加，dim = 2时按列累加<br>X标准化之后再求协方差矩阵，得到的协方差矩阵其实就是X的相关系数矩阵<br></font></p>
 
     
 
@@ -310,7 +295,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https:/hbinfree.github.io/2020/04/20/matlab决策树/" title="matlab决策树" target="_blank">https:/hbinfree.github.io/2020/04/20/matlab决策树/</a>
+          <a href="https:/hbinfree.github.io/2020/04/21/matlab主成分分析/" title="matlab主成分分析" target="_blank">https:/hbinfree.github.io/2020/04/21/matlab主成分分析/</a>
         </li>
         
         <li>
@@ -377,7 +362,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hbinfree.github.io/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hbinfree.github.io/2020/04/21/matlab%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -392,18 +377,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/21/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          区块链笔记
+          matlab因子分析
         
       </div>
     </a>
   
   
-    <a href="/2020/04/20/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">决策树算法</div>
+    <a href="/2020/04/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">区块链笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   

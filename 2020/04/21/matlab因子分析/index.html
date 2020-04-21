@@ -6,26 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hbinfree.github.io">
-  <title>matlab决策树 | HBin</title>
+  <title>matlab因子分析 | HBin</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;决策树算法的matlab实现">
+  <meta name="description" content="&amp;emsp;&amp;emsp;matlab因子分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="matlab决策树">
-<meta property="og:url" content="https://hbinfree.github.io/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/index.html">
+<meta property="og:title" content="matlab因子分析">
+<meta property="og:url" content="https://hbinfree.github.io/2020/04/21/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="HBin">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;决策树算法的matlab实现">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/3.png">
-<meta property="article:published_time" content="2020-04-20T06:46:03.543Z">
-<meta property="article:modified_time" content="2020-04-20T07:07:24.046Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;matlab因子分析">
+<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/2.png">
+<meta property="article:published_time" content="2020-04-21T07:41:46.410Z">
+<meta property="article:modified_time" content="2020-04-21T07:54:24.400Z">
 <meta property="article:author" content="Hbin">
 <meta property="article:tag" content="HBin">
 <meta property="article:tag" content="HBin_技术博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HBin" type="application/atom+xml">
   
@@ -186,22 +185,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-matlab决策树" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-matlab因子分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      matlab决策树
+      matlab因子分析
     </h1>
   
 
 
   
   
-<a href="/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-        <time datetime="2020-04-20T06:46:03.543Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+<a href="/2020/04/21/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" class="archive-article-date">
+        <time datetime="2020-04-21T07:41:46.410Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
 </a>
 
   
@@ -214,7 +213,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">377字</span>
+      <span class="post-count">587字</span>
     </span>
   </span>
 
@@ -223,7 +222,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -234,36 +233,50 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>&emsp;&emsp;决策树算法的matlab实现</p>
+    <p>&emsp;&emsp;matlab因子分析</p>
 <a id="more"></a>
-
-<h2 id="一、fitctree-函数"><a href="#一、fitctree-函数" class="headerlink" title="一、fitctree()函数"></a>一、fitctree()函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tree &#x3D; fitctree(X,Y) %X是分类数据的属性，Y是分类数据的分类值</span><br><span class="line">tree &#x3D; fitctree(X,Y,’CrossVal’,’on’) %用十折交叉验证</span><br><span class="line">tree &#x3D; fitctree(X,Y,&#39;MaxNumSplits&#39;,7,&#39;CrossVal&#39;,&#39;on&#39;); %最大分叉数为7</span><br><span class="line">view(tree,&#39;Mode&#39;,&#39;graph&#39;) %画出决策树</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h2><p>X是训练数据，Y是测试数据，行对应每一个样本，列对应变量，IDX的每一行对应着在X中距离Y最近的样本的索引值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">load ionosphere  %读取ionosphere数据集</span><br><span class="line">rng(1);    % For reproducibility （选取生成随机数的种子？）</span><br><span class="line">MdlDefault &#x3D; fitctree(X,Y,&#39;CrossVal&#39;,&#39;on&#39;);  %生成决策树</span><br><span class="line">% Draw a histogram of the number of imposed splits on the trees. Also, view one of the trees.</span><br><span class="line">numBranches &#x3D; @(x)sum(x.IsBranch);</span><br><span class="line">mdlDefaultNumSplits &#x3D; cellfun(numBranches, MdlDefault.Trained);</span><br><span class="line">figure;</span><br><span class="line">histogram(mdlDefaultNumSplits)</span><br></pre></td></tr></table></figure>
-
+<h2 id="一、Matlab里面提供的factoran函数"><a href="#一、Matlab里面提供的factoran函数" class="headerlink" title="一、Matlab里面提供的factoran函数"></a>一、Matlab里面提供的factoran函数</h2><h3 id="lt-1-gt"><a href="#lt-1-gt" class="headerlink" title="&lt;1&gt;"></a>&lt;1&gt;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lambda&#x3D;factoran（X，m）</span><br></pre></td></tr></table></figure>
+<p>返回包含m个公共因子模型的载荷矩阵lambda。输出参数X是n行d列的矩阵，每行对应一个观测，每列对应一个变量。m是一个正整数，表示模型中公共因子的个数。输出参数lambda是一个d行m列的矩阵，第i行第j列元素表示第i个变量在第j个公共因子上的载荷。</p>
+<h3 id="lt-2-gt"><a href="#lt-2-gt" class="headerlink" title="&lt;2&gt;"></a>&lt;2&gt;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[lambda,psi]&#x3D;factoran（X,m）</span><br></pre></td></tr></table></figure>
+<p>返回特殊方差的最大似然估计psi，psi是包含d个元素的列向量，分别对应d个特殊方差的最大似然估计。</p>
+<h3 id="lt-3-gt"><a href="#lt-3-gt" class="headerlink" title="&lt;3&gt;"></a>&lt;3&gt;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[lambda，psi，T]&#x3D;factoran（X，m）</span><br></pre></td></tr></table></figure>
+<p>返回m行m列的旋转矩阵T</p>
+<h3 id="lt-4-gt"><a href="#lt-4-gt" class="headerlink" title="&lt;4&gt;"></a>&lt;4&gt;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[lambda,psi,T,stats]&#x3D;factoran（X,m）</span><br></pre></td></tr></table></figure>
+<p>返回一个包含模型检验信息的结构体变量stats，模型检验的原假设是H0：因子数=m。输出参数stats包括4个字段，其中stats.loglike表示对数似然的最大值，stats.def表示误差自由度，stats,chisq表示近似卡方检验统计量，stats.p表示检验的p值。对于给定的显著性水平a，若检验的p值大于显著性水平a，则接受原假设H0，说明用含有m个公共因子的模型拟合原始数据是合适的，否则，拒绝原假设，说明拟合是不合适的。</p>
+<h3 id="lt-5-gt"><a href="#lt-5-gt" class="headerlink" title="&lt;5&gt;"></a>&lt;5&gt;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[lambda,psi,stats,F]&#x3D;factoran（X,m）</span><br></pre></td></tr></table></figure>
+<p>返回因子得分矩阵F。F是一个n行m列的矩阵，每一行对应一个观测的m个公共因子的得分。如果X是一个协方差矩阵或相关系数矩阵，则factoran函数不能及时因子得分。factoran函数用相同的旋转矩阵计算载荷阵lambda和因子得分F。</p>
+<h3 id="lt-6-gt"><a href="#lt-6-gt" class="headerlink" title="&lt;6&gt;"></a>&lt;6&gt;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[.......]&#x3D;factoran(.....,param1,val1,param2,val2,.......)</span><br></pre></td></tr></table></figure>
+<p>允许用户指定可选的成对出现的参数名和参数值，用来控制模型的拟合和输出，可用的参数名与参数值如下：</p>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
+    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/1.png">
 </div>
 
-<p>画出决策树</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">view(MdlDefault.Trained&#123;1&#125;,&#39;Mode&#39;,&#39;graph&#39;)    %画出决策树</span><br></pre></td></tr></table></figure>
 <div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/2.png">
+    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/2.png">
 </div>
+因子对原始数据总方差的贡献率计算：lambda矩阵每个数据平方再按列求和
+因子得分矩阵（F）：F是一个n行m列的矩阵，每一行对应一个观测的m个公共因子的得分。
 
-<p>平均分叉数是15</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%现在规定最大分叉树是7</span><br><span class="line">Mdl7 &#x3D; fitctree(X,Y,&#39;MaxNumSplits&#39;,7,&#39;CrossVal&#39;,&#39;on&#39;);</span><br><span class="line">view(Mdl7.Trained&#123;1&#125;,&#39;Mode&#39;,&#39;graph&#39;)</span><br></pre></td></tr></table></figure>
 
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/3.png">
-</div>
 
-<p>然后比较模型的交叉验证分类错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">classErrorDefault &#x3D; kfoldLoss(MdlDefault)</span><br><span class="line">classError7 &#x3D; kfoldLoss(Mdl7)</span><br></pre></td></tr></table></figure>
 
-<p>结果：classErrorDefault = 0.1140 , classError7 = 0.1254<br>Mdl7的复杂性要小得多，并且只比MdlDefault稍微糟糕一点。</p>
-<p>参考:<br><a href="https://blog.csdn.net/mingtian715/article/details/53607060" target="_blank" rel="noopener">https://blog.csdn.net/mingtian715/article/details/53607060</a><br><a href="https://cn.mathworks.com/help/stats/fitctree.html?searchHighlight=fitctree&amp;s_tid=doc_srchtitle" target="_blank" rel="noopener">https://cn.mathworks.com/help/stats/fitctree.html?searchHighlight=fitctree&amp;s_tid=doc_srchtitle</a><br><a href="https://cn.mathworks.com/help/stats/compactclassificationtree.view.html" target="_blank" rel="noopener">https://cn.mathworks.com/help/stats/compactclassificationtree.view.html</a><br><a href="https://zhidao.baidu.com/question/274991642.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/274991642.html</a><br><a href="https://blog.csdn.net/huanleu/article/details/38439345" target="_blank" rel="noopener">https://blog.csdn.net/huanleu/article/details/38439345</a><br><a href="https://blog.csdn.net/j1097376869/article/details/72638737?locationNum=7&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/j1097376869/article/details/72638737?locationNum=7&amp;fps=1</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
@@ -310,7 +323,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https:/hbinfree.github.io/2020/04/20/matlab决策树/" title="matlab决策树" target="_blank">https:/hbinfree.github.io/2020/04/20/matlab决策树/</a>
+          <a href="https:/hbinfree.github.io/2020/04/21/matlab因子分析/" title="matlab因子分析" target="_blank">https:/hbinfree.github.io/2020/04/21/matlab因子分析/</a>
         </li>
         
         <li>
@@ -377,7 +390,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hbinfree.github.io/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hbinfree.github.io/2020/04/21/matlab%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -392,18 +405,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          区块链笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/20/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">决策树算法</div>
+    <a href="/2020/04/21/matlab%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">matlab主成分分析</div>
       <i class="icon-circle-right"></i>
     </a>
   

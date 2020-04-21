@@ -6,26 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://hbinfree.github.io">
-  <title>matlab决策树 | HBin</title>
+  <title>区块链笔记 | HBin</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="&amp;emsp;&amp;emsp;决策树算法的matlab实现">
+  <meta name="description" content="&amp;emsp;&amp;emsp;区块链笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="matlab决策树">
-<meta property="og:url" content="https://hbinfree.github.io/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/index.html">
+<meta property="og:title" content="区块链笔记">
+<meta property="og:url" content="https://hbinfree.github.io/2020/04/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="HBin">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;决策树算法的matlab实现">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/2.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/3.png">
-<meta property="article:published_time" content="2020-04-20T06:46:03.543Z">
-<meta property="article:modified_time" content="2020-04-20T07:07:24.046Z">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;区块链笔记">
+<meta property="article:published_time" content="2020-04-21T07:20:21.418Z">
+<meta property="article:modified_time" content="2020-04-21T07:28:31.561Z">
 <meta property="article:author" content="Hbin">
 <meta property="article:tag" content="HBin">
 <meta property="article:tag" content="HBin_技术博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
   
     <link rel="alternative" href="/atom.xml" title="HBin" type="application/atom+xml">
   
@@ -186,22 +182,22 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-matlab决策树" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-区块链笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      matlab决策树
+      区块链笔记
     </h1>
   
 
 
   
   
-<a href="/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/" class="archive-article-date">
-        <time datetime="2020-04-20T06:46:03.543Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-20</time>
+<a href="/2020/04/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+        <time datetime="2020-04-21T07:20:21.418Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
 </a>
 
   
@@ -214,7 +210,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">377字</span>
+      <span class="post-count">695字</span>
     </span>
   </span>
 
@@ -223,7 +219,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">2分</span>
     </span>
   </span>
 </div>
@@ -234,36 +230,22 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>&emsp;&emsp;决策树算法的matlab实现</p>
+    <p>&emsp;&emsp;区块链笔记</p>
 <a id="more"></a>
 
-<h2 id="一、fitctree-函数"><a href="#一、fitctree-函数" class="headerlink" title="一、fitctree()函数"></a>一、fitctree()函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tree &#x3D; fitctree(X,Y) %X是分类数据的属性，Y是分类数据的分类值</span><br><span class="line">tree &#x3D; fitctree(X,Y,’CrossVal’,’on’) %用十折交叉验证</span><br><span class="line">tree &#x3D; fitctree(X,Y,&#39;MaxNumSplits&#39;,7,&#39;CrossVal&#39;,&#39;on&#39;); %最大分叉数为7</span><br><span class="line">view(tree,&#39;Mode&#39;,&#39;graph&#39;) %画出决策树</span><br></pre></td></tr></table></figure>
-
-<h2 id="二、例子"><a href="#二、例子" class="headerlink" title="二、例子"></a>二、例子</h2><p>X是训练数据，Y是测试数据，行对应每一个样本，列对应变量，IDX的每一行对应着在X中距离Y最近的样本的索引值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">load ionosphere  %读取ionosphere数据集</span><br><span class="line">rng(1);    % For reproducibility （选取生成随机数的种子？）</span><br><span class="line">MdlDefault &#x3D; fitctree(X,Y,&#39;CrossVal&#39;,&#39;on&#39;);  %生成决策树</span><br><span class="line">% Draw a histogram of the number of imposed splits on the trees. Also, view one of the trees.</span><br><span class="line">numBranches &#x3D; @(x)sum(x.IsBranch);</span><br><span class="line">mdlDefaultNumSplits &#x3D; cellfun(numBranches, MdlDefault.Trained);</span><br><span class="line">figure;</span><br><span class="line">histogram(mdlDefaultNumSplits)</span><br></pre></td></tr></table></figure>
-
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/1.png">
-</div>
-
-<p>画出决策树</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">view(MdlDefault.Trained&#123;1&#125;,&#39;Mode&#39;,&#39;graph&#39;)    %画出决策树</span><br></pre></td></tr></table></figure>
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/2.png">
-</div>
-
-<p>平均分叉数是15</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%现在规定最大分叉树是7</span><br><span class="line">Mdl7 &#x3D; fitctree(X,Y,&#39;MaxNumSplits&#39;,7,&#39;CrossVal&#39;,&#39;on&#39;);</span><br><span class="line">view(Mdl7.Trained&#123;1&#125;,&#39;Mode&#39;,&#39;graph&#39;)</span><br></pre></td></tr></table></figure>
-
-<div align="center">
-    <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91matlab/3.png">
-</div>
-
-<p>然后比较模型的交叉验证分类错误</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">classErrorDefault &#x3D; kfoldLoss(MdlDefault)</span><br><span class="line">classError7 &#x3D; kfoldLoss(Mdl7)</span><br></pre></td></tr></table></figure>
-
-<p>结果：classErrorDefault = 0.1140 , classError7 = 0.1254<br>Mdl7的复杂性要小得多，并且只比MdlDefault稍微糟糕一点。</p>
-<p>参考:<br><a href="https://blog.csdn.net/mingtian715/article/details/53607060" target="_blank" rel="noopener">https://blog.csdn.net/mingtian715/article/details/53607060</a><br><a href="https://cn.mathworks.com/help/stats/fitctree.html?searchHighlight=fitctree&amp;s_tid=doc_srchtitle" target="_blank" rel="noopener">https://cn.mathworks.com/help/stats/fitctree.html?searchHighlight=fitctree&amp;s_tid=doc_srchtitle</a><br><a href="https://cn.mathworks.com/help/stats/compactclassificationtree.view.html" target="_blank" rel="noopener">https://cn.mathworks.com/help/stats/compactclassificationtree.view.html</a><br><a href="https://zhidao.baidu.com/question/274991642.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/274991642.html</a><br><a href="https://blog.csdn.net/huanleu/article/details/38439345" target="_blank" rel="noopener">https://blog.csdn.net/huanleu/article/details/38439345</a><br><a href="https://blog.csdn.net/j1097376869/article/details/72638737?locationNum=7&amp;fps=1" target="_blank" rel="noopener">https://blog.csdn.net/j1097376869/article/details/72638737?locationNum=7&amp;fps=1</a></p>
+<h2 id="一、区块链"><a href="#一、区块链" class="headerlink" title="一、区块链"></a>一、区块链</h2><p>1、区块链：分布式数据库</p>
+<p>1、最大特点：没有管理员，彻底无中心的。</p>
+<p>2、区块链由一个个区块（block）组成，每次往区块链写入数据就是创建一个区块。</p>
+<p>3、每个区块包含两个部分：<br>区块头（Head）：记录当前区块的元信息<br>区块体（Body）：实际数据</p>
+<p>4、区块头包含当前区块的多项元信息：<br>①    生成时间<br>②    实际数据（即区块体）的Hash<br>③    上一个区块的Hash<br>④    ……  </p>
+<p>5、区块链的Hash长度是265位二进制数据。<br>推论1：每个区块的Hash都是不一样的，可以通过Hash标识区块。<br>推论2：如果区块的内容变了，它的Hash一定会改变。</p>
+<p>6、区块与Hash是一一对应的，每个区块的Hash都是针对“区块头”（Head）计算的。</p>
+<p>7、因为某一区块包含上一个区块的Hash，所以如果要修改这个区块，这个区块的Hash就会改变，同时引起上一个区块的改变，进而造成整个区块链的改变。如果有人要恶意篡改区块的信息，必须修改整个区块链，但这种情况几乎不可能发生，除非有人掌握了全网51%以上的计算能力。所以，数据一旦被写入，就无法修改。</p>
+<h2 id="二、采矿："><a href="#二、采矿：" class="headerlink" title="二、采矿："></a>二、采矿：</h2><p>1、中本聪故意让添加新区块变得很困难。平均10分钟一个。计算Hash的机器叫做矿机，操作矿的人叫做矿工。</p>
+<h2 id="三、难度系数："><a href="#三、难度系数：" class="headerlink" title="三、难度系数："></a>三、难度系数：</h2><p>1、只有满足条件的Hash才会被区块链接受。区块头包含一个难度系数（difficulty），这个值决定了计算Hash的难度。区块链协议规定，使用一个常量除以难度系数，可以得到目标值（target）。显然，难度系数越大，目标值就越小。只有小于目标值的Hash才是有效的。由于目标值非常小，Hash小于该值的机会极其渺茫，所以采矿会很慢。</p>
+<p>2、区块头里面还有一个Nonce值，记录了Hash重算的次数。</p>
+<p>3、难度系数会动态调节，为了将难度系数恒定在10分钟。</p>
+<h2 id="四、区块的分叉："><a href="#四、区块的分叉：" class="headerlink" title="四、区块的分叉："></a>四、区块的分叉：</h2><p>1、如果两个人同时向区块链写入数据，采取的规则是：<br>新节点总是采用最长的那条区块链。如果区块链有分叉，将看哪个分支在分叉点后面，先达到6个新区快（成为“六次确认”）。由于新区快的生成速度由计算能力决定，所以这条规矩就是说，拥有大多数计算能力的那条分支，就是正宗的比特链。</p>
 
     
 
@@ -310,7 +292,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https:/hbinfree.github.io/2020/04/20/matlab决策树/" title="matlab决策树" target="_blank">https:/hbinfree.github.io/2020/04/20/matlab决策树/</a>
+          <a href="https:/hbinfree.github.io/2020/04/21/区块链笔记/" title="区块链笔记" target="_blank">https:/hbinfree.github.io/2020/04/21/区块链笔记/</a>
         </li>
         
         <li>
@@ -377,7 +359,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hbinfree.github.io/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://hbinfree.github.io/2020/04/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%AC%94%E8%AE%B0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -392,18 +374,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/04/21/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/21/matlab%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          区块链笔记
+          matlab主成分分析
         
       </div>
     </a>
   
   
-    <a href="/2020/04/20/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">决策树算法</div>
+    <a href="/2020/04/20/matlab%E5%86%B3%E7%AD%96%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">matlab决策树</div>
       <i class="icon-circle-right"></i>
     </a>
   
