@@ -249,67 +249,67 @@
     <p>&emsp;&emsp;决策树算法是机器学习中很经典的一个算法。</p>
 <a id="more"></a>
 
-<h2 id="一、信息熵"><a href="#一、信息熵" class="headerlink" title="一、信息熵"></a>一、信息熵</h2><div align="center">
+<h2 id="一、信息熵"><a href="#一、信息熵" class="headerlink" title="一、信息熵"></a>一、信息熵</h2><div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/1.png">
 </div>
 
 <p>其中n代表X的n种不同的离散取值。而P_i代表了X取值为i的概率，log为以2或者e为底的对数。举个例子，比如X有2个可能的取值，而这两个取值各为1/2时X的熵最大，此时X具有最大的不确定性。</p>
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/2.png">
 </div>
 
-<h2 id="二、联合熵和条件熵"><a href="#二、联合熵和条件熵" class="headerlink" title="二、联合熵和条件熵"></a>二、联合熵和条件熵</h2><div align="center">
+<h2 id="二、联合熵和条件熵"><a href="#二、联合熵和条件熵" class="headerlink" title="二、联合熵和条件熵"></a>二、联合熵和条件熵</h2><div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/3.png">
 </div>
 
 <p>证明：</p>
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/4.png">
 </div>
 
 <h2 id="三、信息增益I-X-Y"><a href="#三、信息增益I-X-Y" class="headerlink" title="三、信息增益I(X,Y)"></a>三、信息增益I(X,Y)</h2><p>H(X)度量了X的不确定性，条件熵H(X|Y)度量了我们在知道Y以后X剩下的不确定性，H(X)-H(X|Y) 度量了X在知道Y以后不确定性减少程度，这个度量我们在信息论中称为互信息，记为I(X,Y) ，在决策树ID3算法中叫做信息增益。信息增益大，则越适合用来分类。</p>
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/5.png">
 </div>
 
-<h2 id="四、决策树ID3算法思路"><a href="#四、决策树ID3算法思路" class="headerlink" title="四、决策树ID3算法思路"></a>四、决策树ID3算法思路</h2><div align="center">
+<h2 id="四、决策树ID3算法思路"><a href="#四、决策树ID3算法思路" class="headerlink" title="四、决策树ID3算法思路"></a>四、决策树ID3算法思路</h2><div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/6.png">
 </div>
 
-<h2 id="五、特征熵"><a href="#五、特征熵" class="headerlink" title="五、特征熵"></a>五、特征熵</h2><div align="center">
+<h2 id="五、特征熵"><a href="#五、特征熵" class="headerlink" title="五、特征熵"></a>五、特征熵</h2><div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/7.png">
 </div>
 
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/8.png">
 </div>
 
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/9.png">
 </div>
 
 <h2 id="六、CART算法"><a href="#六、CART算法" class="headerlink" title="六、CART算法"></a>六、CART算法</h2><p>不同于ID3和C4.5，CART算法使用基尼系数来代替信息增益和信息增益率，基尼系数代表了模型的不纯度，基尼系数越小，则不纯度越低，特征越好。</p>
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/10.png">
 </div>
 
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/11.png">
 </div>
 
-<h2 id="七、CART算法的剪枝"><a href="#七、CART算法的剪枝" class="headerlink" title="七、CART算法的剪枝"></a>七、CART算法的剪枝</h2><div align="center">
+<h2 id="七、CART算法的剪枝"><a href="#七、CART算法的剪枝" class="headerlink" title="七、CART算法的剪枝"></a>七、CART算法的剪枝</h2><div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/12.png">
 </div>
 
-<h2 id="八、损失函数"><a href="#八、损失函数" class="headerlink" title="八、损失函数"></a>八、损失函数</h2><div align="center">
+<h2 id="八、损失函数"><a href="#八、损失函数" class="headerlink" title="八、损失函数"></a>八、损失函数</h2><div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/13.png">
 </div>
 
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/14.png">
 </div>
 
-<div align="center">
+<div align=center>
     <img src="https://raw.githubusercontent.com/hbinfree/code-img/master/%E5%86%B3%E7%AD%96%E6%A0%91/15.png">
 </div>
 

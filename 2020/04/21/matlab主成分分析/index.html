@@ -248,7 +248,7 @@
 <p>返回一个包含n个元素的列向量tsquare，它的第i个元素的第i个观测对应的霍特林T^2统计量，表述了第i个观测与数据集(样本观测矩阵)的中心之间的距离，可用来寻找远离中心的极端数据。</p>
 <h4 id="lt-4-gt"><a href="#lt-4-gt" class="headerlink" title="&lt;4&gt;"></a>&lt;4&gt;</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[......]&#x3D;princomp（X,‘econ’）</span><br></pre></td></tr></table></figure>
 <p>通过设置参数‘econ’参数，使得当n&lt;=p时，只返回latent中的前n-1个元素(去掉不必要的0元素)及COEFF和SCORE矩阵中相应的列。</p>
-<p><font color="red">注：<br>SCORE即是原数据新的坐标系下的数据形式<br>额外获得：<br>cumsum函数：<br>B = cumsum(A,dim)，或B = cumsum(A)<br>dim = 1按行累加，dim = 2时按列累加<br>X标准化之后再求协方差矩阵，得到的协方差矩阵其实就是X的相关系数矩阵<br></font></p>
+<p><font color=red >注：<br>SCORE即是原数据新的坐标系下的数据形式<br>额外获得：<br>cumsum函数：<br>B = cumsum(A,dim)，或B = cumsum(A)<br>dim = 1按行累加，dim = 2时按列累加<br>X标准化之后再求协方差矩阵，得到的协方差矩阵其实就是X的相关系数矩阵<br></font></p>
 
     
 
